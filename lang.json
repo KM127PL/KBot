@@ -11,7 +11,11 @@
             "description": "Czyści wiadomości na kanale",
             "deleted": "Usunięto `{count}` wiadomości! 🧹",
             "how-much": "Musisz podać ile wiadomości mam usunąć!"
-
+        },
+        "help": {
+            "name": "Help",
+            "description": "Wyświetla listę komend.",
+            "title": "**Pomoc**"
         }
     },
     "other": {
@@ -19,6 +23,7 @@
         "no-perm": "Nie masz permisji do używania tej komendy!",
         "moderator": "Moderator",
         "perms": {
+            "none": "Brak",
             "manage-messages": "Zarządzanie Wiadomościami"
         }
     }
