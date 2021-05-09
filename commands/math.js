@@ -16,9 +16,5 @@ module.exports = {
 		message.channel.send({ embed: embed.getEmbed() });
 		message.react(process.env.GOOD_EMOJI);
 		return embed.destroy();
-		/*let embed = new CE(`${lang.commands.math.title}`, ``);
-		message.channel.send({ embed: embed.getEmbed() });
-		message.react(process.env.GOOD_EMOJI);
-		embed.destroy();*/
 	},
 };

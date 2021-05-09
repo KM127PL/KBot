@@ -14,9 +14,6 @@ client.events = new Discord.Collection();
 
 client.on('message', message => {
 	if(message.author.bot) return;
-	if(client.events.get('on-message-sent')) {
-		client.events.get('on-message-sent').execute({message}, client);
-	}
 	if(!db.has(`prefix.${message.guild.id}`)) { // If the guild does not have a prefix, set it.
 		db.set(`prefix.${message.guild.id}`, `${prefix}`);
 		console.log(`Setting prefix of ${message.guild} to ${prefix}`);
@@ -32,13 +29,15 @@ client.on('message', message => {
 	}
 
 	let p = db.get(`prefix.${message.guild.id}`);
-	if (!message.content.startsWith(p)) return;
 
 	const args = message.content.slice(p.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
+	
+	if(client.events.get('on-message-sent')) {
+		return client.events.get('on-message-sent').execute(message, message.content, client);
+	}
 
-	if (!client.commands.has(command)) return;
-
+	if (!client.commands.has(command) || !message.content.startsWith(p)) return;
 	try {
 		client.commands.get(command).execute(message, args, client);
 	} catch (error) {
