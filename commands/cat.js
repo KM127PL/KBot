@@ -1,5 +1,4 @@
 const CE = require('../functions/CreateEmbed.js');
-const fs = require('fs');
 const lang = require(`../lang/lang-${process.env.LANGUAGE}.json`);
 const fetch = require('node-fetch');
 
@@ -9,7 +8,6 @@ module.exports = {
 	perms: lang.other.perms.none,
 	async execute(message, args, client) {
 
-
 		const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
 		let embed = new CE(`${lang.commands.cat.title}`, ``);
 
@@ -18,9 +16,6 @@ module.exports = {
 		message.channel.send({ embed: embed.getEmbed() });
 		message.react(process.env.GOOD_EMOJI);
 		return embed.destroy();
-		
-
-		
 
 	}
 };
