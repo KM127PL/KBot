@@ -36,5 +36,9 @@
             "none": "Brak",
             "manage-messages": "Zarządzanie Wiadomościami"
         }
+    },
+    "events": {
+        "undefined-math-exp": "Nieznana funkcja matematyczna!",
+        "math-footer-bad-exp": "Aby zrobić komentarz, użyj $"
     }
 }

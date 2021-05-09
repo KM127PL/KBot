@@ -5,7 +5,8 @@ const math = require(`mathjs`);
 module.exports = {
 	event: 'on-message-sent',
 	execute(message, args, client) {
-        if(message.channel.id == 840991453572628520) {
+        if(message.content.startsWith("$")) return;
+        if(message.channel.id == process.env.MATH_CHANNEL) {
             try {
                 expr = args;
                 let embed = new CE(`${lang.commands.math.title}`, `\`\`\`${expr} = ${math.evaluate(expr)}\`\`\``);
@@ -14,7 +15,8 @@ module.exports = {
                 return embed.destroy();
             } catch (e) {
                 expr = args;
-                let embed = new CE(`${lang.commands.math.title}`, `\`\`\`Nieznana funckja matematyczna.\`\`\``);
+                let embed = new CE(`${lang.commands.math.title}`, `\`\`\`${lang.events['undefined-math-exp']}\`\`\``);
+                embed.setFooter(lang.events['math-footer-bad-exp']);
                 message.channel.send({ embed: embed.getEmbed() });
                 message.react(process.env.BAD_EMOJI);
                 return embed.destroy();

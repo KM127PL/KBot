@@ -68,6 +68,17 @@ class Embed {
 		embed = null;
 		isCreated = false;
 	}
+	
+	/**
+	 * Footer.
+	 * @param {*} footer footer of the embed
+	 */
+	setFooter( footer ) {
+		if(!isCreated)
+			this.createEmbed();
+			
+		embed.setFooter(footer);
+	}
 }
 
 module.exports = Embed;

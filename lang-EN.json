@@ -36,5 +36,9 @@
             "none": "None",
             "manage-messages": "Manage Messages"
         }
+    },
+    "events": {
+        "undefined-math-exp": "Undefined math function!",
+        "math-footer-bad-exp": "To make a comment, use $"
     }
 }
