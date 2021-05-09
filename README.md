@@ -1,3 +1,5 @@
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/KM127PL/KBot) ![GitHub](https://img.shields.io/github/license/KM127PL/KBot) ![GitHub package.json version](https://img.shields.io/github/package-json/v/KM127PL/KBot)
+
 # KBot
 
 ## Installation
