@@ -5,7 +5,7 @@ const math = require(`mathjs`);
 module.exports = {
 	event: 'on-message-sent',
 	execute(message, args, client) {
-        if(message.content.startsWith("$")) return;
+        if(message.content.startsWith("$")) return; // Comments
         if(message.channel.id == process.env.MATH_CHANNEL) {
             try {
                 expr = args;
