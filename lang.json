@@ -1,0 +1,15 @@
+{
+    "commands": {
+        "prefix": {
+            "name": "Prefix",
+            "description": "Wyświetla oraz zmienia prefix bota.",
+            "my-prefix-here": "Mój prefix tutaj to: ",
+            "set-to": "Ustawiono prefix na: "
+        }
+    },
+    "other": {
+        "error": "there was an error trying to execute that command!",
+        "no-perm": "Nie masz permisji do używania tej komendy!",
+        "moderator": "Moderator"
+    }
+}

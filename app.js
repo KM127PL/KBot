@@ -6,6 +6,7 @@ const prefix = process.env.DISCORD_PREFIX;
 const db = require('quick.db');
 const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const lang = require("./lang.json");
 client.commands = new Discord.Collection();
 
 
@@ -16,7 +17,7 @@ client.on('message', message => {
 	}
 
 	if (message.mentions.has(client.user)) { // If the bot was mentioned, send the prefix.
-		let embed = new CE("Prefix", "Mój prefix tutaj to: " + db.get(`prefix.${message.guild.id}`));
+		let embed = new CE(`${lang.commands.prefix.name}`, `${lang.commands.prefix['my-prefix-here']}` + db.get(`prefix.${message.guild.id}`));
 
 		message.react(process.env.GOOD_EMOJI);
 		message.channel.send({ embed: embed.getEmbed() });
@@ -36,7 +37,7 @@ client.on('message', message => {
 		client.commands.get(command).execute(message, args, client);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply(lang.other.error);
 	}
 
 });
