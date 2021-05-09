@@ -8,6 +8,10 @@ const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const lang = require(`./lang-${process.env.LANGUAGE}.json`);
+if(process.env.HEROKU_BYPASS_ENABLED) {
+	const express = require('express');
+	const app = express();
+}
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -61,3 +65,11 @@ client.on('ready', () => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
+if(process.env.HEROKU_BYPASS_ENABLED) {
+	app.get('/', (req, res) => {
+		return res.send("Heroku bypass");
+	});
+	
+	app.listen(process.env.PORT);
+}
