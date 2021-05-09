@@ -45,9 +45,10 @@ client.on('message', message => {
 client.on('ready', () => {
 	for (const file of commandFiles) {
 		const command = require(`./commands/${file}`);
-		client.commands.set(command.name, command);
+		client.commands.set(command.name.toLowerCase(), command);
+		console.log(`[BOT] Registering ${command.name.toLowerCase()} from ${file}`)
 	}	
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`[BOT] Logged in as ${client.user.tag}!`);
 });
 
 client.login(process.env.DISCORD_TOKEN);
