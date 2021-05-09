@@ -32,6 +32,11 @@
             "description": "Sends a random cat image.",
             "title": "Cat",
             "url": "https://aws.random.cat/meow"
+        },
+        "avatar": {
+            "name": "Avatar",
+            "description": "Sends your or someones avatar.",
+            "title": "Avatar"
         }
     },
     "other": {

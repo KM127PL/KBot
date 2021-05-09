@@ -32,6 +32,11 @@
             "description": "Wysyła losowe zdjęcie kota.",
             "title": "Kot",
             "url": "https://aws.random.cat/meow"
+        },
+        "avatar": {
+            "name": "Avatar",
+            "description": "Wysyła twój lub kogoś avatar.",
+            "title": "Avatar"
         }
     },
     "other": {

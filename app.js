@@ -11,6 +11,43 @@ const lang = require(`./lang/lang-${process.env.LANGUAGE}.json`);
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
+
+client.on('message', (message) => {
+	if(message.author.bot || message.channel.type === 'dm') return; // Cancel if the author is a bot or channel is dm
+	if(!db.has(`prefix.${message.guild.id}`)) return db.set(`prefix.${message.guild.id}`, `${prefix}`); // Set the guild prefix if none is present
+
+	if (message.mentions.has(client.user)) { // If the bot was mentioned, send the prefix.
+		let embed = new CE(`${lang.commands.prefix.name}`, `${lang.commands.prefix['my-prefix-here']}` + db.get(`prefix.${message.guild.id}`));
+
+		message.react(process.env.GOOD_EMOJI);
+		message.channel.send({ embed: embed.getEmbed() });
+		
+		return embed.destroy();
+	}
+
+	let prefix = db.get(`prefix.${message.guild.id}`); // Get prefix from the db
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/); // Create arguments
+	const commandName = args.shift().toLowerCase();
+
+	const command = client.commands.get(commandName)
+		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+
+	client.events.get('on-message-sent').execute(message, message.content, client);
+	
+
+	if (!message.content.startsWith(prefix.toLowerCase())) return;
+	try {
+		command.execute(message, args, client);
+	} catch (error) {
+		console.error(error);
+		message.reply(lang.other.error);
+	}
+
+});
+
+/*
 client.on('message', message => {
 	if(message.author.bot || message.channel.type === 'dm') return;
 	if(!db.has(`prefix.${message.guild.id}`)) { // If the guild does not have a prefix, set it.
@@ -43,8 +80,12 @@ client.on('message', message => {
 		console.error(error);
 		message.reply(lang.other.error);
 	}
-});
+});*/
 
+
+/*
+	Register commands and events
+*/
 client.on('ready', () => {
 	for (const file of commandFiles) {
 		const command = require(`./commands/${file}`);
