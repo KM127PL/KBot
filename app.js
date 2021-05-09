@@ -60,14 +60,3 @@ client.on('ready', () => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
-
-if(process.env.HEROKU_BYPASS_ENABLED) {
-	const express = require('express');
-	const app = express();
-
-	app.get('/', (req, res) => {
-		return res.send(`<div style="align-self: center;text-align: center;margin-top: 24.6%;">Hello!</div>`);
-	});
-	
-	app.listen(process.env.PORT);
-}
