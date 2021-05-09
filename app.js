@@ -47,42 +47,6 @@ client.on('message', (message) => {
 });
 
 /*
-client.on('message', message => {
-	if(message.author.bot || message.channel.type === 'dm') return;
-	if(!db.has(`prefix.${message.guild.id}`)) { // If the guild does not have a prefix, set it.
-		db.set(`prefix.${message.guild.id}`, `${prefix}`);
-		console.log(`Setting prefix of ${message.guild} to ${prefix}`);
-	}
-
-	if (message.mentions.has(client.user)) { // If the bot was mentioned, send the prefix.
-		let embed = new CE(`${lang.commands.prefix.name}`, `${lang.commands.prefix['my-prefix-here']}` + db.get(`prefix.${message.guild.id}`));
-
-		message.react(process.env.GOOD_EMOJI);
-		message.channel.send({ embed: embed.getEmbed() });
-		
-		return embed.destroy();
-	}
-
-	let p = db.get(`prefix.${message.guild.id}`);
-
-	const args = message.content.slice(p.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-	
-	if(client.events.get('on-message-sent')) {
-		client.events.get('on-message-sent').execute(message, message.content, client);
-	}
-
-	if (!client.commands.has(command) || !message.content.startsWith(p.toLowerCase())) return;
-	try {
-		client.commands.get(command).execute(message, args, client);
-	} catch (error) {
-		console.error(error);
-		message.reply(lang.other.error);
-	}
-});*/
-
-
-/*
 	Register commands and events
 */
 client.on('ready', () => {
