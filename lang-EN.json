@@ -1,0 +1,35 @@
+{
+    "commands": {
+        "prefix": {
+            "name": "Prefix",
+            "description": "Shows and changes the prefix.",
+            "my-prefix-here": "My prefix here is: ",
+            "set-to": "Set the prefix to: "
+        },
+        "clear": {
+            "name": "Clear",
+            "description": "Clears the messages on this channel",
+            "deleted": "Cleared `{count}` messages from this channel! 🧹",
+            "how-much": "You need to specify the amount of messages to delete!"
+        },
+        "help": {
+            "name": "Help",
+            "description": "Shows list of commands.",
+            "title": "**Help**"
+        },
+        "ping": {
+            "name": "ping",
+            "description": "Shows ping!",
+            "my-ping": "My ping is "
+        }
+    },
+    "other": {
+        "error": "there was an error trying to execute that command!",
+        "no-perm": "You do not have permission to execute this command!",
+        "moderator": "Moderator",
+        "perms": {
+            "none": "None",
+            "manage-messages": "Manage Messages"
+        }
+    }
+}

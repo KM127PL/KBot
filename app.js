@@ -6,7 +6,7 @@ const prefix = process.env.DISCORD_PREFIX;
 const db = require('quick.db');
 const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const lang = require("./lang.json");
+const lang = require(`./lang-${process.env.LANG}.json`);
 client.commands = new Discord.Collection();
 
 
