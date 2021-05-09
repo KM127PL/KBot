@@ -18,7 +18,7 @@
             "title": "**Pomoc**"
         },
         "ping": {
-            "name": "ping",
+            "name": "Ping",
             "description": "Wyświetla ping bota",
             "my-ping": "Mój ping to "
         }
