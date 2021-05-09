@@ -12,7 +12,7 @@ module.exports = {
 		for (let i = 0; i < args.length; i++) {
 			expr = expr + " " + args[i];
 		}
-		let embed = new CE(`${lang.commands.math.title} (${expr} )`, `\`\`\`${expr} = ${math.evaluate(expr)}\`\`\``);
+		let embed = new CE(`${lang.commands.math.title}`, `\`\`\`${expr} = ${math.evaluate(expr)}\`\`\``);
 		message.channel.send({ embed: embed.getEmbed() });
 		message.react(process.env.GOOD_EMOJI);
 		return embed.destroy();
