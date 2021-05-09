@@ -16,6 +16,11 @@
             "name": "Help",
             "description": "Wyświetla listę komend.",
             "title": "**Pomoc**"
+        },
+        "ping": {
+            "name": "ping",
+            "description": "Wyświetla ping bota",
+            "my-ping": "Mój ping to "
         }
     },
     "other": {
