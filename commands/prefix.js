@@ -1,6 +1,6 @@
 const CE = require('../functions/CreateEmbed.js');
 const db = require('quick.db');
-const lang = require("../lang.json")
+const lang = require(`../lang-${process.env.LANGUAGE}.json`);
 
 module.exports = {
 	name: lang.commands.prefix.name,
