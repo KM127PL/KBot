@@ -7,7 +7,7 @@ const db = require('quick.db');
 const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
-const lang = require(`./lang-${process.env.LANGUAGE}.json`);
+const lang = require(`./lang/lang-${process.env.LANGUAGE}.json`);
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 

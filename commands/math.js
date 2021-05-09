@@ -1,5 +1,5 @@
 const CE = require('../functions/CreateEmbed.js');
-const lang = require(`../lang-${process.env.LANGUAGE}.json`);
+const lang = require(`../lang/lang-${process.env.LANGUAGE}.json`);
 const math = require(`mathjs`);
 
 
