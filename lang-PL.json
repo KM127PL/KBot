@@ -21,6 +21,11 @@
             "name": "Ping",
             "description": "Wyświetla ping bota",
             "my-ping": "Mój ping to "
+        },
+        "math": {
+            "name": "Math",
+            "title": "**Matematyka**",
+            "description": "Matematyka."
         }
     },
     "other": {

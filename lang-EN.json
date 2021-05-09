@@ -21,6 +21,11 @@
             "name": "Ping",
             "description": "Shows ping!",
             "my-ping": "My ping is "
+        },
+        "math": {
+            "name": "Math",
+            "title": "**Math**",
+            "description": "Math."
         }
     },
     "other": {
