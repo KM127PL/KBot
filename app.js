@@ -33,7 +33,7 @@ client.on('message', message => {
 	const command = args.shift().toLowerCase();
 	
 	if(client.events.get('on-message-sent')) {
-		return client.events.get('on-message-sent').execute(message, message.content, client);
+		client.events.get('on-message-sent').execute(message, message.content, client);
 	}
 
 	if (!client.commands.has(command) || !message.content.startsWith(p)) return;
