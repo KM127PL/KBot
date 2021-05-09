@@ -26,6 +26,12 @@
             "name": "Math",
             "title": "**Matematyka**",
             "description": "Matematyka."
+        },
+        "cat": {
+            "name": "Cat",
+            "description": "Wysyła losowe zdjęcie kota.",
+            "title": "Kot",
+            "url": "https://aws.random.cat/meow"
         }
     },
     "other": {

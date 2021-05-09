@@ -26,6 +26,12 @@
             "name": "Math",
             "title": "**Math**",
             "description": "Math."
+        },
+        "cat": {
+            "name": "Cat",
+            "description": "Sends a random cat image.",
+            "title": "Cat",
+            "url": "https://aws.random.cat/meow"
         }
     },
     "other": {

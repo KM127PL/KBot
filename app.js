@@ -36,7 +36,7 @@ client.on('message', message => {
 		client.events.get('on-message-sent').execute(message, message.content, client);
 	}
 
-	if (!client.commands.has(command) || !message.content.startsWith(p)) return;
+	if (!client.commands.has(command) || !message.content.startsWith(p.toLowerCase())) return;
 	try {
 		client.commands.get(command).execute(message, args, client);
 	} catch (error) {
