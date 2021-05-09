@@ -24,7 +24,7 @@
         }
     },
     "other": {
-        "error": "there was an error trying to execute that command!",
+        "error": "Wystąpił błąd podczas uruchamiania tej komendy!",
         "no-perm": "Nie masz permisji do używania tej komendy!",
         "moderator": "Moderator",
         "perms": {
