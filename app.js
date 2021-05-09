@@ -12,7 +12,7 @@ client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
 client.on('message', message => {
-	if(message.author.bot) return;
+	if(message.author.bot || message.channel.type === 'dm') return;
 	if(!db.has(`prefix.${message.guild.id}`)) { // If the guild does not have a prefix, set it.
 		db.set(`prefix.${message.guild.id}`, `${prefix}`);
 		console.log(`Setting prefix of ${message.guild} to ${prefix}`);
