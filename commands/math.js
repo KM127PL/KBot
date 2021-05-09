@@ -21,7 +21,6 @@ module.exports = {
 		} catch (e) {
 			expr = args;
 			let embed = new CE(`${lang.commands.math.title}`, `\`\`\`${lang.events['undefined-math-exp']}\`\`\``);
-			embed.setFooter(lang.events['math-footer-bad-exp']);
 			message.channel.send({ embed: embed.getEmbed() });
 			message.react(process.env.BAD_EMOJI);
 			return embed.destroy();
