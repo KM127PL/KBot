@@ -1,12 +1,13 @@
 const CE = require('../functions/CreateEmbed.js');
+const lang = require('../lang.json');
 
 module.exports = {
-	name: 'clear',
-	description: 'Czyści wiadomości na kanale',
-    perms: "Zarządzanie Wiadomościami",
+	name: lang.commands.clear.name,
+	description: lang.commands.clear.description,
+    perms: lang.other.perms['manage-messages'],
 	execute(message, args, client) {
 		if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-            let embed = new CE("Moderator", "Nie masz permisji do używania tej komendy!");
+            let embed = new CE(lang.other.moderator, lang.other['no-perm']);
             message.channel.send({ embed: embed.getEmbed() });
             message.react(process.env.BAD_EMOJI);
             return embed.destroy();
@@ -15,15 +16,15 @@ module.exports = {
             if(!isNaN(count) && count < 101 && count > 0) {
                 message.channel.bulkDelete(count + 1, true)
                 
-                let embed = new CE("Moderator", `Usunięto \`${count}\` wiadomości! 🧹`);
+                let embed = new CE(lang.other.moderator, lang.commands.clear.deleted.replace('{count}', count + 1));
 		        message.channel.send({ embed: embed.getEmbed() });
-		        message.react('840704663468376106');
+		        message.react(process.env.GOOD_EMOJI);
 		        return embed.destroy();
             }
                 
         }
         
-        let embed = new CE("Moderator", "Musisz podać ile wiadomości mam usunąć!");
+        let embed = new CE(lang.other.moderator, lang.commands.clear['how-much']);
         message.channel.send({ embed: embed.getEmbed() });
         message.react(process.env.BAD_EMOJI);
         return embed.destroy();
