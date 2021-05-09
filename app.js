@@ -6,11 +6,17 @@ const prefix = process.env.DISCORD_PREFIX;
 const db = require('quick.db');
 const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const lang = require(`./lang-${process.env.LANGUAGE}.json`);
-client.commands = new Discord.Collection();
 
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
 
 client.on('message', message => {
+	if(message.author.bot) return;
+	if(client.events.get('on-message-sent')) {
+		client.events.get('on-message-sent').execute({message}, client);
+	}
 	if(!db.has(`prefix.${message.guild.id}`)) { // If the guild does not have a prefix, set it.
 		db.set(`prefix.${message.guild.id}`, `${prefix}`);
 		console.log(`Setting prefix of ${message.guild} to ${prefix}`);
@@ -26,7 +32,7 @@ client.on('message', message => {
 	}
 
 	let p = db.get(`prefix.${message.guild.id}`);
-	if (!message.content.startsWith(p) || message.author.bot) return;
+	if (!message.content.startsWith(p)) return;
 
 	const args = message.content.slice(p.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
@@ -39,15 +45,19 @@ client.on('message', message => {
 		console.error(error);
 		message.reply(lang.other.error);
 	}
-
 });
 
 client.on('ready', () => {
 	for (const file of commandFiles) {
 		const command = require(`./commands/${file}`);
 		client.commands.set(command.name.toLowerCase(), command);
-		console.log(`[BOT] Registering ${command.name.toLowerCase()} from ${file}`)
-	}	
+		console.log(`[BOT] Registering command ${command.name.toLowerCase()} from ${file}`)
+	}
+	for (const file of eventFiles) {
+		const event = require(`./events/${file}`);
+		client.events.set(event.event.toLowerCase(), event);
+		console.log(`[BOT] Registering event ${event.event.toLowerCase()} from ${file}`)
+	}
     console.log(`[BOT] Logged in as ${client.user.tag}!`);
 });
 
