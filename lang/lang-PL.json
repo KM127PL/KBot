@@ -43,6 +43,12 @@
             "description": "Bierze odpowiedź z brainly.",
             "title": "Brainly",
             "loading": "Ładowanie..."
+        },
+        "wiki": {
+            "name": "wiki",
+            "title": "Wikipedia",
+            "description": "Bierze informacje z wikipedii.",
+            "does-not-exist": "Ten artykuł nie istnieje!"
         }
     },
     "other": {

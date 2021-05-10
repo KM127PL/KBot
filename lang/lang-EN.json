@@ -43,6 +43,12 @@
             "description": "Gets an answer from brainly.",
             "title": "Brainly",
             "loading": "Loading..."
+        },
+        "wiki": {
+            "name": "wiki",
+            "title": "Wikipedia",
+            "description": "Gets information from wikipedia.",
+            "does-not-exist": "This article does not exist!"
         }
     },
     "other": {
