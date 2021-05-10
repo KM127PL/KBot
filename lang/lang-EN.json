@@ -49,6 +49,7 @@
         "error": "There was an error trying to execute that command!",
         "no-perm": "You do not have permission to execute this command!",
         "moderator": "Moderator",
+        "no-args": "You need to specify the arguments of this command!",
         "perms": {
             "none": "None",
             "manage-messages": "Manage Messages"

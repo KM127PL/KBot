@@ -49,6 +49,7 @@
         "error": "Wystąpił błąd podczas uruchamiania tej komendy!",
         "no-perm": "Nie masz permisji do używania tej komendy!",
         "moderator": "Moderator",
+        "no-args": "Musisz podać argumenty do tej komendy!",
         "perms": {
             "none": "Brak",
             "manage-messages": "Zarządzanie Wiadomościami"
