@@ -37,6 +37,12 @@
             "name": "Avatar",
             "description": "Wysyła twój lub kogoś avatar.",
             "title": "Avatar"
+        },
+        "brainly": {
+            "name": "Brainly",
+            "description": "Bierze odpowiedź z brainly.",
+            "title": "Brainly",
+            "loading": "Ładowanie..."
         }
     },
     "other": {

@@ -37,6 +37,12 @@
             "name": "Avatar",
             "description": "Sends your or someones avatar.",
             "title": "Avatar"
+        },
+        "brainly": {
+            "name": "Brainly",
+            "description": "Gets an answer from brainly.",
+            "title": "Brainly",
+            "loading": "Loading..."
         }
     },
     "other": {
