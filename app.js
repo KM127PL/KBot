@@ -32,11 +32,11 @@ client.on('message', (message) => {
 
 	client.events.get('on-message-sent').execute(message, message.content, client);
 	
-	if (!message.content.startsWith(prefix.toLowerCase())) return;
+	if (!message.content.startsWith(prefix.toLowerCase()) || !client.commands.get(commandName)) return;
 	try {
 		command.execute(message, args, client);
 	} catch (error) {
-		console.error(error);
+		console.error(error);!
 		message.reply(lang.other.error);
 	}
 

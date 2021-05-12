@@ -51,7 +51,7 @@
             "does-not-exist": "This article does not exist!"
         },
         "nuke": {
-            "name": "nuke",
+            "name": "Nuke",
             "description": "Nukes this channel.",
             "message": "This channel was nuked!"
         }
