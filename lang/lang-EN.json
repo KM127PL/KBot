@@ -49,6 +49,11 @@
             "title": "Wikipedia",
             "description": "Gets information from wikipedia.",
             "does-not-exist": "This article does not exist!"
+        },
+        "nuke": {
+            "name": "nuke",
+            "description": "Nukes this channel.",
+            "message": "This channel was nuked!"
         }
     },
     "other": {

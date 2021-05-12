@@ -49,6 +49,11 @@
             "title": "Wikipedia",
             "description": "Bierze informacje z wikipedii.",
             "does-not-exist": "Ten artykuł nie istnieje!"
+        },
+        "nuke": {
+            "name": "nuke",
+            "description": "Nuke-uje ten kanał.",
+            "message": "Ten kanał został znuke-wany."
         }
     },
     "other": {
