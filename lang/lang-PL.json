@@ -45,15 +45,16 @@
             "loading": "Ładowanie..."
         },
         "wiki": {
-            "name": "wiki",
+            "name": "Wiki",
             "title": "Wikipedia",
             "description": "Bierze informacje z wikipedii.",
             "does-not-exist": "Ten artykuł nie istnieje!"
         },
         "nuke": {
-            "name": "nuke",
+            "name": "Nuke",
             "description": "Nuke-uje ten kanał.",
-            "message": "Ten kanał został znuke-wany."
+            "message": "Ten kanał został znuke-wany.",
+            "gifs": ["https://tenor.com/view/nuke-gif-8044239", "https://tenor.com/view/nuke-nuclear-explosion-gif-14867944", "https://tenor.com/view/destory-eexplode-nuke-gif-6073338", "https://tenor.com/view/explosion-mushroom-cloud-atomic-bomb-bomb-boom-gif-4464831"]
         }
     },
     "other": {

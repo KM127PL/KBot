@@ -53,7 +53,8 @@
         "nuke": {
             "name": "Nuke",
             "description": "Nukes this channel.",
-            "message": "This channel was nuked!"
+            "message": "This channel was nuked!",
+            "gifs": ["https://tenor.com/view/nuke-gif-8044239", "https://tenor.com/view/nuke-nuclear-explosion-gif-14867944", "https://tenor.com/view/destory-eexplode-nuke-gif-6073338", "https://tenor.com/view/explosion-mushroom-cloud-atomic-bomb-bomb-boom-gif-4464831"]
         }
     },
     "other": {

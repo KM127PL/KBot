@@ -7,6 +7,7 @@ const CE = require('./functions/CreateEmbed.js');
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const lang = require(`./lang/lang-${process.env.LANGUAGE}.json`);
+
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.on('message', (message) => {
@@ -36,7 +37,7 @@ client.on('message', (message) => {
 	try {
 		command.execute(message, args, client);
 	} catch (error) {
-		console.error(error);!
+		console.error(error);
 		message.reply(lang.other.error);
 	}
 

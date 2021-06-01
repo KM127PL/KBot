@@ -13,15 +13,14 @@ module.exports = {
             return embed.destroy();
         }
 
-
         let channel = await message.channel.clone(undefined);
         message.channel.delete();
 
-
         let embed = new CE(lang.other.moderator, lang.commands.nuke.message);
-        embed.setImage("https://i.pinimg.com/originals/47/12/89/471289cde2490c80f60d5e85bcdfb6da.gif");
-        channel.send({ embed: embed.getEmbed() });
-       // message.react(process.env.GOOD_EMOJI);
+        embed.setImage(lang.commands.nuke.gifs[Math.floor(Math.random() * lang.commands.nuke.gifs.length + 1)]);
+        channel.send({ embed: embed.getEmbed() }, (msg) => {
+            msg.react(process.env.GOOD_EMOJI);
+        });
         return embed.destroy();
                 
         
